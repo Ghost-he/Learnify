@@ -176,3 +176,4 @@ C:\Me\C# WorkSpace\Learnify\Learnify\obj\Debug\net9.0\refint\Learnify.dll
 C:\Me\C# WorkSpace\Learnify\Learnify\obj\Debug\net9.0\Learnify.pdb
 C:\Me\C# WorkSpace\Learnify\Learnify\obj\Debug\net9.0\Learnify.genruntimeconfig.cache
 C:\Me\C# WorkSpace\Learnify\Learnify\obj\Debug\net9.0\ref\Learnify.dll
+C:\Me\C# WorkSpace\Learnify\Learnify\obj\Debug\net9.0\Learnify.sourcelink.json

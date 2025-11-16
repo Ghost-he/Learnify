@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Learnify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bd89e3bbfa43609b97acf74324616b51342c32a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6cffbe651b6ce510baabb8171d95fed26d1a1a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Learnify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Learnify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
