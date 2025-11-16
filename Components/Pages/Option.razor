@@ -1,0 +1,40 @@
+@page "/year/{YearNumber:int}/semester/{SemesterNumber:int}/Subject/Option"
+
+<PageTitle>Year @YearNumber - Semester @SemesterNumber</PageTitle>
+
+<!-- Dynamic Header -->
+<section class="headers">
+    <h1>Subjects for Year @YearNumber, Semester @SemesterNumber</h1>
+</section>
+
+<!-- Features Section to display subjects -->
+<section class="features">
+
+    <NavLink href="@($"/year/{YearNumber}/semester/{SemesterNumber}/Subject/Option/Syllabus")" class="Year">
+                <h2>Syllabus</h2>
+    </NavLink>
+
+   <NavLink href="@($"/year/{YearNumber}/semester/{SemesterNumber}/Subject/Option/Notes")" class="Year">
+                <h2>Notes</h2>
+    </NavLink>
+
+    <NavLink href="@($"/year/{YearNumber}/semester/{SemesterNumber}/Subject/Option/PYQs")" class="Year">
+                <h2>PYQs</h2>
+                
+    </NavLink>
+    
+    <NavLink href="@($"/year/{YearNumber}/semester/{SemesterNumber}/Subject/Option/Videos")" class="Year">
+                <h2>Videos</h2>
+                
+    </NavLink>
+</section>
+
+
+@code {
+    [Parameter]
+    public int YearNumber { get; set; }
+
+    [Parameter]
+    public int SemesterNumber { get; set; }
+
+}

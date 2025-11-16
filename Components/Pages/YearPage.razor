@@ -1,0 +1,51 @@
+@page "/Year{YearNumber:int}"
+
+<PageTitle>Year @YearNumber</PageTitle>
+
+<section class="features">
+    @if (SemestersToShow != null)
+    {
+        @foreach (var sem in SemestersToShow)
+        {
+            <NavLink href="@($"/year/{YearNumber}/semester/{sem}/Subject")" class="Year">
+                <h3>Semester @sem</h3>
+                <p>Explore subjects and materials</p>
+            </NavLink>
+        }
+    }
+    else
+    {
+        <p>Invalid year selected.</p>
+    }
+</section>
+
+
+@code {
+    [Parameter]
+    public int YearNumber { get; set; }
+
+    private List<int>? SemestersToShow { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // This C# code runs when the page loads
+        switch (YearNumber)
+        {
+            case 1:
+                SemestersToShow = new List<int> { 1, 2 };
+                break;
+            case 2:
+                SemestersToShow = new List<int> { 3, 4 };
+                break;
+            case 3:
+                SemestersToShow = new List<int> { 5, 6 };
+                break;
+            case 4:
+                SemestersToShow = new List<int> { 7, 8 };
+                break;
+            default:
+                SemestersToShow = null; // Handle invalid year
+                break;
+        }
+    }
+}

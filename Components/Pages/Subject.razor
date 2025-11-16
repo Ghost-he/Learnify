@@ -1,0 +1,58 @@
+@page "/year/{YearNumber:int}/semester/{SemesterNumber:int}/Subject"
+
+@using Learnify.Data
+@using Microsoft.EntityFrameworkCore
+@inject TestWebContext DbContext
+
+
+<PageTitle>Year @YearNumber - Semester @SemesterNumber</PageTitle>
+
+<!-- Dynamic Header -->
+<section class="headers">
+    <h1>Subjects for Year @YearNumber, Semester @SemesterNumber</h1>
+</section>
+
+<!-- Features Section to display subjects -->
+<section class="features">
+    @if (subjectList == null)
+    {
+        <p><em>Loading subjects...</em></p>
+    }
+    else if (!subjectList.Any())
+    {
+        <p>No subjects found for this semester.</p>
+    }
+    else
+    {
+        @foreach (var sub in subjectList)
+        {
+            <NavLink href="@($"/year/{YearNumber}/semester/{SemesterNumber}/Subject/Option")" class="Year">
+                <h3>@sub.Subject</h3>
+            </NavLink>
+        }
+    }
+</section>
+
+@code {
+    [Parameter]
+    public int YearNumber { get; set; }
+
+    [Parameter]
+    public int SemesterNumber { get; set; }
+
+    private List<Stddatum>? subjectList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Using LINQ is the standard and safest way to do this.
+        // It's type-safe and avoids potential raw SQL issues.
+        // This will correctly fetch subjects where the 'sem' column
+        // matches the SemesterNumber from the URL.
+        subjectList = await DbContext.Stddata
+                            .Where(s => s.Sem == SemesterNumber)
+                            .ToListAsync();
+    }
+
+
+}
+
